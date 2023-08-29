@@ -13,5 +13,6 @@ public class operators {
         int result = (int) Math.floor(average / 2);
         if (result > 3)
             System.out.println("Программа выполнена корректно");
+        scan.close();
     }
 }
