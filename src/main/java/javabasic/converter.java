@@ -58,7 +58,7 @@ public class converter {
             case 1:
                 System.out.println("Результат конвертирования метры в: ");
                 System.out.println("Метры: " + number);
-                System.out.println("Мили: " + number * 0.0062);
+                System.out.println("Мили: " + number * 0.00062);
                 System.out.println("Ярды: " + number * 1.09);
                 System.out.println("Футы: " + number * 3.28);
                 break;
