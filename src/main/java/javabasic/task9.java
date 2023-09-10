@@ -10,7 +10,7 @@ public class task9 {
         double[] array = new double[arraySize];
         System.out.println("Для заполнения массива введите числа типа double");
         for (int i = 0; i < array.length; i++) {
-            array[i] = doubleImput();
+            array[i] = doubleInput();
         }
         double sum = 0;
         for (int i = 0; i < array.length; i++) {
@@ -24,14 +24,14 @@ public class task9 {
         System.out.println(Arrays.toString(result));
     }
 
-    public static double doubleImput() {
+    public static double doubleInput() {
         Scanner scan = new Scanner(System.in);
         while (true) {
-            double doubleImput = 0;
+            double doubleInput = 0;
             String a = scan.nextLine();
             try {
-                doubleImput = Double.parseDouble(a);
-                return doubleImput;
+                doubleInput = Double.parseDouble(a);
+                return doubleInput;
             } catch (NumberFormatException ex) {
                 System.out.println("Введите вещественное число");
             }
