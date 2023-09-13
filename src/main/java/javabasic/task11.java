@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class task11 {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
         System.out.println("Введите два целых числа.");
         System.out.println("Первое число: ");
         String number1 = Integer.toString(integer());
@@ -12,7 +11,7 @@ public class task11 {
         int number2 = integer();
         int result = Math.max(number2, Integer.parseInt(number1));
         System.out.println("Большее из двух чисел: " + result);
-        double result2 = (double) Math.min(number2, Integer.parseInt(number1));
+        double result2 = Math.min(number2, Integer.parseInt(number1));
         System.out.println("Меньшее из двух чисел: " + result2);
     }
 
