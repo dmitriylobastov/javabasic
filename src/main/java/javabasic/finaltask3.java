@@ -17,7 +17,7 @@ public class finaltask3 {
         }
         System.out.println("Количество строк: " + numberOfLines);
         for (int i = 0; i < input.length; i++) {
-            System.out.println("Строка" + (i + 1) + ": " + input[i]);
+            System.out.println("Строка " + (i + 1) + ": " + input[i]);
         }
         int[] uniqueCharacters = new int[numberOfLines];
         for (int i = 0; i < uniqueCharacters.length; i++) {
