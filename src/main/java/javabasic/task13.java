@@ -11,15 +11,15 @@ public class task13 {
         String[] noSpaces = input.split(" ");
         int count = 0;
         String[] latin = new String[noSpaces.length];
-        for (int i = 0; i < noSpaces.length; i++) {
-            if(noSpaces[i].matches("[a-zA-Z]+")) {
-                latin [count] = noSpaces[i];
+        for (String noSpace : noSpaces) {
+            if (noSpace.matches("[a-zA-Z]+")) {
+                latin[count] = noSpace;
                 count++;
             }
         }
-        String [] noNullLatin = Arrays.copyOf(latin, count);
+        String[] noNullLatin = Arrays.copyOf(latin, count);
         System.out.println("Cлова, состоящие только из латиницы: ");
-        for(String s : noNullLatin) {
+        for (String s : noNullLatin) {
             System.out.println(s);
         }
         System.out.println("Количество слов, состоящих только из латиницы: " + count);
