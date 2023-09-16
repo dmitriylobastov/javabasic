@@ -35,7 +35,7 @@ public class finaltask1 {
             double dollar = 0;
             String a = scan.nextLine();
             try {
-                dollar = (double) (Math.floor(Double.parseDouble(a) * 100)) / 100;
+                dollar = (Math.floor(Double.parseDouble(a) * 100)) / 100;
                 return dollar;
             } catch (NumberFormatException e) {
                 System.out.println("Введите текущий курс доллара, типа Double больше нуля: ");
