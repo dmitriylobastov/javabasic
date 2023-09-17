@@ -17,59 +17,37 @@ public class calculator {
         Scanner scan = new Scanner(System.in);
         System.out.println("Калькулятор");
         System.out.println("Введите первое целое число: ");
-        int numberOne = 0;
-        int numberTwo = 0;
-        while (true) {
-            String a = scan.nextLine();
-            try {
-                numberOne = Integer.parseInt(a);
-                break;
-            } catch (NumberFormatException ex) {
-                System.out.println(a + " - это не целое число, введите целое число: ");
-            }
-        }
+        int numberOne = integer();
         System.out.println("Введите второе целое число: ");
-        while (true) {
-            String b = scan.nextLine();
-            try {
-                numberTwo = Integer.parseInt(b);
-                break;
-            } catch (NumberFormatException ex) {
-                System.out.println(b + " - это не целое число, введите целое число: ");
-            }
-        }
+        int numberTwo = integer();
         System.out.println("Введите тип операции, символ ‘+’, ‘-’, ‘*’ или ‘/’: ");
         int result = 0;
         char symbol = ' ';
-        String[] string1 = {"+", "-", "*", "/"};
+        other:
         while (scan.hasNext()) {
-            String s = scan.nextLine();
-            boolean yes = false;
-            for (int i = 0; i < string1.length; i++) {
-                yes = !s.equalsIgnoreCase(string1[i]);
-                if (yes == false)
+            String s = scan.nextLine().replace(" ", "");
+            if (s.equals("")) {
+                continue;
+            }
+            symbol = s.charAt(0);
+            switch (symbol) {
+                case '+':
+                    result = numberOne + numberTwo;
                     break;
+                case '-':
+                    result = numberOne - numberTwo;
+                    break;
+                case '*':
+                    result = numberOne * numberTwo;
+                    break;
+                case '/':
+                    result = numberOne / numberTwo;
+                    break;
+                default:
+                    System.out.println(symbol + " - это не знак операции. Введите тип операции, символ ‘+’, ‘-’, ‘*’ или ‘/’: ");
+                    continue other;
             }
-            if (yes) {
-                System.out.println(symbol + " - это не знак операции. Введите тип операции, символ ‘+’, ‘-’, ‘*’ или ‘/’: ");
-            } else {
-                symbol = s.charAt(0);
-                switch (symbol) {
-                    case '+':
-                        result = numberOne + numberTwo;
-                        break;
-                    case '-':
-                        result = numberOne - numberTwo;
-                        break;
-                    case '*':
-                        result = numberOne * numberTwo;
-                        break;
-                    case '/':
-                        result = numberOne / numberTwo;
-                        break;
-                }
-                break;
-            }
+            break;
         }
         scan.close();
         System.out.print("Результат: ");
@@ -77,5 +55,22 @@ public class calculator {
         System.out.print(symbol + " ");
         System.out.print(numberTwo + " = ");
         System.out.println(result);
+    }
+
+    public static int integer() {
+        Scanner scan = new Scanner(System.in);
+        while (true) {
+            int integer = 0;
+            String a = scan.nextLine().replace(" ", "");
+            if (a.equals("")) {
+                continue;
+            }
+            try {
+                integer = Integer.parseInt(a);
+                return integer;
+            } catch (NumberFormatException ex) {
+                System.out.println(a + " - это не целое число, введите целое число: ");
+            }
+        }
     }
 }
