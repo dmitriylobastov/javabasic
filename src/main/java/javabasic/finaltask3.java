@@ -25,10 +25,7 @@ public class finaltask3 {
         }
         int maxCountUniqueCharacters = 0;
         for (int i = 0; i < numberOfLines; i++) {
-            if (i == 0) {
-                continue;
-            }
-            if (uniqueCharacters[i] > uniqueCharacters[i - 1]) {
+            if (uniqueCharacters[i] > uniqueCharacters[maxCountUniqueCharacters]) {
                 maxCountUniqueCharacters = i;
             }
         }
